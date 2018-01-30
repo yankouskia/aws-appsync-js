@@ -1,7 +1,7 @@
 # aws-appsync-js
 
 ## Description
-Pure js client for AWS AppSync. (AWS AppSync)[https://console.aws.amazon.com/appsync]
+Pure js client for AWS AppSync. [AWS AppSync](https://console.aws.amazon.com/appsync)
 
 Welcome! AWS AppSync is a managed GraphQL service that allows web and mobile
 developers to create powerful data driven applications on top of AWS. Follow these
