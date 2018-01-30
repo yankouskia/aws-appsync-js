@@ -28,4 +28,8 @@ export default class AppSyncClient {
   request(query, variables) {
     return this.queryBuilder.request(query, variables);
   }
+
+  introspect() {
+    return this.queryBuilder.introspect();
+  }
 }
