@@ -36,7 +36,7 @@ one of our powerful SDKs or using popular tools such as Apollo Client and Relay.
 ### Install
 
 ```sh
-npm install aws-appsync-js
+npm install aws-appsync-js --save
 # or
 yarn add aws-appsync-js
 ```
