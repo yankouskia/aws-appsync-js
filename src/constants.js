@@ -1,0 +1,9 @@
+const API_KEY_MODE = 'API_KEY_MODE';
+const AWS_IAM = 'AWS_IAM';
+const AMAZON_COGNITO_USER_POOLS = 'AMAZON_COGNITO_USER_POOLS';
+
+export const authMode = {
+  API_KEY_MODE,
+  AWS_IAM,
+  AMAZON_COGNITO_USER_POOLS,
+};

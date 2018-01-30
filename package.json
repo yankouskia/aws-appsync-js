@@ -1,0 +1,30 @@
+{
+  "name": "aws-appsync-js",
+  "version": "0.0.1",
+  "description": "Simple pure js client for AWS AppSync",
+  "main": "./dist/appsync.js",
+  "scripts": {
+    "build": "rm -rf dist && NODE_ENV=production webpack -p --config webpack.config.js --progress",
+    "build:dev": "rm -rf dist && NODE_ENV=development webpack --config webpack.config.js --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yankouskia/aws-appsync-js.git"
+  },
+  "author": "Aliaksandr Yankouski <aleksandr.yankovskiy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yankouskia/aws-appsync-js/issues"
+  },
+  "homepage": "https://github.com/yankouskia/aws-appsync-js#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "exports-loader": "^0.6.4",
+    "webpack": "^3.10.0",
+    "whatwg-fetch": "^2.0.3"
+  }
+}
