@@ -1,0 +1,24 @@
+[
+  {
+    "name": "ESM build (gzipped)",
+    "path": "dist/index.js",
+    "limit": "6 KB",
+    "gzip": true,
+    "ignore": ["node:crypto"]
+  },
+  {
+    "name": "CJS build (gzipped)",
+    "path": "dist/index.cjs",
+    "limit": "6 KB",
+    "gzip": true,
+    "ignore": ["node:crypto"]
+  },
+  {
+    "name": "ESM — tree-shaken AppSyncClient only",
+    "path": "dist/index.js",
+    "import": "{ AppSyncClient }",
+    "limit": "4 KB",
+    "gzip": true,
+    "ignore": ["node:crypto"]
+  }
+]

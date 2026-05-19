@@ -1,0 +1,14 @@
+name: Question / discussion
+description: Ask a question about the library or its usage.
+labels: [question]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (what you've tried, links you've read)

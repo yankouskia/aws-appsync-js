@@ -1,0 +1,27 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "out": "docs/api",
+  "tsconfig": "tsconfig.json",
+  "readme": "README.md",
+  "name": "aws-appsync-js",
+  "navigationLinks": {
+    "GitHub": "https://github.com/yankouskia/aws-appsync-js",
+    "npm": "https://www.npmjs.com/package/aws-appsync-js"
+  },
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "categorizeByGroup": true,
+  "groupOrder": ["Classes", "Functions", "Variables", "Type Aliases", "Interfaces", "*"],
+  "sort": ["source-order"],
+  "githubPages": false,
+  "hideGenerator": true,
+  "useTsLinkResolution": true,
+  "validation": {
+    "notExported": true,
+    "invalidLink": true,
+    "notDocumented": false
+  }
+}
