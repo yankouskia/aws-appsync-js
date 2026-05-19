@@ -2,7 +2,13 @@ name: Docs
 
 on:
   push:
-    branches: [master, main]
+    branches: [master, main, 'modernize/**']
+    paths:
+      - 'src/**'
+      - 'README.md'
+      - 'website/**'
+      - 'typedoc.json'
+      - '.github/workflows/docs.yml'
   workflow_dispatch:
 
 permissions:
@@ -16,21 +22,64 @@ concurrency:
 
 jobs:
   build:
-    name: Build TypeDoc site
+    name: Build Docusaurus + TypeDoc
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
       - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
         with:
           node-version-file: .nvmrc
           cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm docs
+
+      # ---- Build the TypeDoc API reference from the root package
+      - name: Install root deps
+        run: pnpm install --frozen-lockfile
+      - name: Generate TypeDoc API reference
+        run: pnpm docs
+
+      # ---- Move TypeDoc output under the Docusaurus static dir so it
+      #      becomes available at `/api/` on the deployed site.
+      - name: Stage API reference under website/static/api
+        run: |
+          rm -rf website/static/api
+          mkdir -p website/static
+          mv docs/api website/static/api
+
+      # ---- Install + build the Docusaurus site
+      - name: Install website deps
+        working-directory: website
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck website
+        working-directory: website
+        run: pnpm typecheck
+
+      - name: Build website
+        working-directory: website
+        run: pnpm build
+
+      - name: Verify build output
+        run: |
+          set -e
+          test -f website/build/index.html
+          test -f website/build/docs/intro.html
+          test -f website/build/docs/quickstart.html
+          test -f website/build/docs/auth-modes/iam.html
+          test -f website/build/api/index.html
+          # Pages serves the artifact verbatim — make sure Jekyll won't filter `_*` paths.
+          touch website/build/.nojekyll
+          # CNAME passthrough (no-op if not present in repo).
+          if [ -f website/CNAME ]; then cp website/CNAME website/build/CNAME; fi
+          du -sh website/build
+
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
-          path: docs/api
+          path: website/build
 
   deploy:
     name: Deploy to GitHub Pages

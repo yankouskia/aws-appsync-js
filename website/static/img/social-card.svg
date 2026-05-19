@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#050a14"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="55%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="100" cy="100" r="280" fill="#22d3ee" opacity="0.10"/>
+  <circle cx="1100" cy="540" r="320" fill="#6366f1" opacity="0.12"/>
+  <text x="80" y="200" font-family="Inter, -apple-system, sans-serif" font-size="36" font-weight="600" fill="#67e8f9" letter-spacing="4">AWS · APPSYNC · TYPESCRIPT · 3 KB</text>
+  <text x="80" y="320" font-family="Inter, -apple-system, sans-serif" font-size="84" font-weight="800" fill="url(#grad)" letter-spacing="-2">aws-appsync-js</text>
+  <text x="80" y="400" font-family="Inter, -apple-system, sans-serif" font-size="34" font-weight="500" fill="#e2e8f0">A tiny, fully-typed AppSync GraphQL client.</text>
+  <text x="80" y="450" font-family="Inter, -apple-system, sans-serif" font-size="34" font-weight="500" fill="#94a3b8">Every auth mode. Edge-ready. Zero dependencies.</text>
+  <text x="80" y="560" font-family="JetBrains Mono, monospace" font-size="22" fill="#67e8f9">npm i aws-appsync-js</text>
+</svg>

@@ -33,5 +33,5 @@
     "types": ["node"]
   },
   "include": ["src", "test", "tsup.config.ts", "vitest.config.ts"],
-  "exclude": ["node_modules", "dist", "coverage", "docs", "examples"]
+  "exclude": ["node_modules", "dist", "coverage", "docs", "examples", "website"]
 }

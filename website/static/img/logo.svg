@@ -1,0 +1,11 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="aws-appsync-js logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="55%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#g)"/>
+  <path d="M11.5 27.5L20 12l8.5 15.5h-3.2l-1.8-3.3h-7l-1.8 3.3h-3.2zm5.6-5.9h5.8L20 16.2l-2.9 5.4z" fill="#0b1220"/>
+</svg>

@@ -9,6 +9,7 @@
       "node_modules",
       "examples/**/dist",
       "examples/**/node_modules",
+      "website",
       "pnpm-lock.yaml",
       "CHANGELOG.md"
     ]
