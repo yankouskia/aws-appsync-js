@@ -38,7 +38,7 @@ jobs:
       - name: Install root deps
         run: pnpm install --frozen-lockfile
       - name: Generate TypeDoc API reference
-        run: pnpm docs
+        run: pnpm run docs
 
       # ---- Move TypeDoc output under the Docusaurus static dir so it
       #      becomes available at `/api/` on the deployed site.
