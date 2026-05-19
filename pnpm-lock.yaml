@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@arethetypeswrong/cli':
-        specifier: ^0.17.2
+        specifier: ^0.17.4
         version: 0.17.4
       '@biomejs/biome':
         specifier: ^1.9.4
@@ -18,46 +18,46 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       '@changesets/cli':
-        specifier: ^2.27.11
+        specifier: ^2.31.0
         version: 2.31.0(@types/node@22.19.19)
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.14.0)
       '@size-limit/preset-small-lib':
-        specifier: ^11.1.6
+        specifier: ^11.2.0
         version: 11.2.0(size-limit@11.2.0)
       '@types/node':
-        specifier: ^22.10.5
+        specifier: ^22.19.19
         version: 22.19.19
       '@vitest/coverage-v8':
-        specifier: ^2.1.8
+        specifier: ^2.1.9
         version: 2.1.9(vitest@2.1.9(@types/node@22.19.19))
       graphql:
-        specifier: ^16.10.0
+        specifier: ^16.14.0
         version: 16.14.0
       lefthook:
-        specifier: ^1.10.0
+        specifier: ^1.13.6
         version: 1.13.6
       lint-staged:
-        specifier: ^15.3.0
+        specifier: ^15.5.2
         version: 15.5.2
       publint:
-        specifier: ^0.3.2
+        specifier: ^0.3.21
         version: 0.3.21
       size-limit:
         specifier: ^11.2.0
         version: 11.2.0
       tsup:
-        specifier: ^8.3.5
+        specifier: ^8.5.1
         version: 8.5.1(jiti@2.7.0)(postcss@8.5.14)(typescript@5.9.3)(yaml@2.9.0)
       typedoc:
-        specifier: ^0.27.6
+        specifier: ^0.27.9
         version: 0.27.9(typescript@5.9.3)
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^2.1.8
+        specifier: ^2.1.9
         version: 2.1.9(@types/node@22.19.19)
 
 packages:
