@@ -1,6 +1,6 @@
 {
   "name": "aws-appsync-js",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A tiny, fully-typed, zero-dependency AWS AppSync (GraphQL) client for Node and the browser. Supports all 5 AppSync auth modes, AbortSignal, retries, and end-to-end TypeScript inference via TypedDocumentNode.",
   "keywords": [
     "aws",
