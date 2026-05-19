@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  commands:
+    biome:
+      glob: "*.{js,ts,jsx,tsx,json}"
+      run: pnpm exec biome check --write --no-errors-on-unmatched {staged_files}
+      stage_fixed: true
+    typecheck:
+      glob: "*.ts"
+      run: pnpm exec tsc --noEmit
+
+commit-msg:
+  commands:
+    conventional-commit:
+      run: |
+        head -1 "{1}" | grep -Eq '^(feat|fix|chore|refactor|docs|test|ci|build|deps|perf|style|revert)(\(.+\))?!?: .{1,80}$' \
+          || { echo "Commit message must follow Conventional Commits: type(scope?): subject"; exit 1; }

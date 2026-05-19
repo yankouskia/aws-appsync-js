@@ -1,30 +1,115 @@
 {
   "name": "aws-appsync-js",
-  "version": "0.0.1",
-  "description": "Simple pure js client for AWS AppSync",
-  "main": "./dist/appsync.js",
-  "scripts": {
-    "build": "rm -rf dist && NODE_ENV=production webpack -p --config webpack.config.js --progress",
-    "build:dev": "rm -rf dist && NODE_ENV=development webpack --config webpack.config.js --progress"
+  "version": "1.0.0",
+  "description": "A tiny, fully-typed, zero-dependency AWS AppSync (GraphQL) client for Node and the browser. Supports all 5 AppSync auth modes, AbortSignal, retries, and end-to-end TypeScript inference via TypedDocumentNode.",
+  "keywords": [
+    "aws",
+    "appsync",
+    "graphql",
+    "graphql-client",
+    "typescript",
+    "typed-document-node",
+    "fetch",
+    "sigv4",
+    "iam",
+    "cognito",
+    "oidc",
+    "edge",
+    "esm",
+    "tree-shakable",
+    "zero-dependencies"
+  ],
+  "homepage": "https://yankouskia.github.io/aws-appsync-js",
+  "bugs": {
+    "url": "https://github.com/yankouskia/aws-appsync-js/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yankouskia/aws-appsync-js.git"
   },
-  "author": "Aliaksandr Yankouski <aleksandr.yankovskiy@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yankouskia/aws-appsync-js/issues"
+  "author": {
+    "name": "Aliaksandr Yankouski",
+    "email": "aleksandr.yankovskiy@gmail.com",
+    "url": "https://github.com/yankouskia"
   },
-  "homepage": "https://github.com/yankouskia/aws-appsync-js#readme",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/yankouskia"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE", "CHANGELOG.md"],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist coverage docs/api .tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "docs": "typedoc",
+    "size": "size-limit",
+    "validate:package": "publint && attw --pack .",
+    "prepublishOnly": "pnpm run clean && pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run build && pnpm run validate:package",
+    "release": "changeset publish",
+    "prepare": "lefthook install >/dev/null 2>&1 || true"
+  },
+  "peerDependencies": {
+    "@graphql-typed-document-node/core": ">=3.2.0",
+    "graphql": ">=15.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@graphql-typed-document-node/core": {
+      "optional": true
+    },
+    "graphql": {
+      "optional": true
+    }
+  },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "exports-loader": "^0.6.4",
-    "webpack": "^3.10.0",
-    "whatwg-fetch": "^2.0.3"
+    "@arethetypeswrong/cli": "^0.17.2",
+    "@biomejs/biome": "^1.9.4",
+    "@changesets/cli": "^2.27.11",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@size-limit/preset-small-lib": "^11.1.6",
+    "@types/node": "^22.10.5",
+    "@vitest/coverage-v8": "^2.1.8",
+    "graphql": "^16.10.0",
+    "lefthook": "^1.10.0",
+    "lint-staged": "^15.3.0",
+    "publint": "^0.3.2",
+    "size-limit": "^11.1.6",
+    "tsup": "^8.3.5",
+    "typedoc": "^0.27.6",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
