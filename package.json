@@ -101,7 +101,7 @@
     "@vitest/coverage-v8": "^2.1.8",
     "graphql": "^16.10.0",
     "lefthook": "^1.10.0",
-    "lint-staged": "^15.3.0",
+    "lint-staged": "^17.0.5",
     "publint": "^0.3.2",
     "size-limit": "^11.2.0",
     "tsup": "^8.3.5",
