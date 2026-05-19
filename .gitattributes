@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.gif binary
+*.svg text
+pnpm-lock.yaml -diff merge=binary linguist-generated=true
+dist/** linguist-generated=true
