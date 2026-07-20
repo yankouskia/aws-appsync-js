@@ -91,10 +91,10 @@
     }
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.17.2",
+    "@arethetypeswrong/cli": "^0.18.5",
     "@biomejs/biome": "^1.9.4",
     "@changesets/changelog-github": "^0.7.0",
-    "@changesets/cli": "^2.27.11",
+    "@changesets/cli": "^2.31.1",
     "@graphql-typed-document-node/core": "^3.2.0",
     "@size-limit/preset-small-lib": "^11.1.6",
     "@types/node": "^22.10.5",
@@ -105,7 +105,7 @@
     "publint": "^0.3.2",
     "size-limit": "^11.2.0",
     "tsup": "^8.3.5",
-    "typedoc": "^0.27.6",
+    "typedoc": "^0.28.20",
     "typescript": "^5.7.3",
     "vitest": "^2.1.8"
   },
